@@ -1,16 +1,20 @@
 package com.volacode.Sowlo.data.models;
 
+
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.Type;
 
-@Entity
 @Data
 @NoArgsConstructor
-public class ExchangeSpecificExtensions {
+@Entity
+public class Segment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long  id;
-
+    private   Long id;
+    private   String name;
+    private   String value;
+    @OneToOne
+    private ExchangeSpecificExtensions exchangeSpecificExtensions;
 }

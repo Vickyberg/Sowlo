@@ -1,38 +1,75 @@
 package com.volacode.Sowlo.data.models;
 
+import jakarta.persistence.*;
+import lombok.*;
+import java.util.HashSet;
+import java.util.Set;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import java.util.ArrayList;
-import java.util.List;
-
-@Data
-
+@Getter
+@Setter
 @NoArgsConstructor
+@ToString
+@Entity
 public class BidRequest {
 
 
-    private String id;
-    private Impressions impression;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @OneToMany
+    private Set<Impressions> impressions = new HashSet<>();
+
+
+
+    @OneToOne
     private Site site;
+    @OneToOne
     private App app;
+
+    @OneToOne
     private Device device;
+
+    @OneToOne
     private User user;
+
     private int test;
     private int auctionType;
     private int maximumTime;
-    List<String> wSeat = new ArrayList<>();
-    List<String> bSeat = new ArrayList<>();
+
+    @ElementCollection(fetch = FetchType.EAGER)
+     private Set<String> wSeats = new HashSet<>();
+
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    private Set<String> bSeats = new HashSet<>();
+
     private int allImpressions;
-    List<String> currency = new ArrayList<>();
-    List<String> wLangB = new ArrayList<>();
-    List<String> blockedAdvertiserCategories = new ArrayList<>();
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    private Set<String> currency = new HashSet<>();
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    private Set<String> languages = new HashSet<>();
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    private  Set<String> blockedAdvertiserCategories = new HashSet<>();
+
     private  int catTax;
-    List<String> blockListOfAdvertisers = new ArrayList<>();
-    List<String> blockListOfApplications = new ArrayList<>();
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    private Set<String> blockedListOfAdvertisers = new HashSet<>();
+
+    @ElementCollection(fetch = FetchType.EAGER)
+   private Set<String> blockedListOfApplications = new HashSet<>();
+
+    @OneToOne
     private Source source;
+
+    @OneToOne
     private Regulations regulations;
+
+    @OneToOne
     private ExchangeSpecificExtensions exchangeSpecificExtensions;
 
 
