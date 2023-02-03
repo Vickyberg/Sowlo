@@ -10,7 +10,7 @@ import java.util.*;
 @Data
 @NoArgsConstructor
 @Entity
-public class Banner {
+public class    Banner {
 
 
     @Id

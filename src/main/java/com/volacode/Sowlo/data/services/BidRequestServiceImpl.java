@@ -4,6 +4,7 @@ import com.volacode.Sowlo.data.models.BidRequest;
 import com.volacode.Sowlo.data.repositories.BidRequestRepo;
 import com.volacode.Sowlo.exceptions.BidRequestException;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ import java.util.Optional;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class BidRequestServiceImpl implements BidRequestService{
 
     private final BidRequestRepo bidRequestRepo;
@@ -26,6 +28,7 @@ public class BidRequestServiceImpl implements BidRequestService{
 
         BidRequest bidRequest =modelMapper.map(request, BidRequest.class);
         BidRequest savedRequest =  bidRequestRepo.save(bidRequest);
+        log.info("Request to be saved in db :: {}",savedRequest);
 
         return creationResponse(savedRequest);
     }
