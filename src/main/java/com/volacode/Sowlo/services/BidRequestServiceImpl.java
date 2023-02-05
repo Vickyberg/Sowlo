@@ -1,4 +1,4 @@
-package com.volacode.Sowlo.data.services;
+package com.volacode.Sowlo.services;
 
 import com.volacode.Sowlo.data.models.BidRequest;
 import com.volacode.Sowlo.data.repositories.BidRequestRepo;
