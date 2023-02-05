@@ -6,12 +6,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@NoArgsConstructor
-public class Format {
+public class CompanionAd {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private  Long id;

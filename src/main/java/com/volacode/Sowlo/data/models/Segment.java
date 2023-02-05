@@ -8,14 +8,13 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity
-public class Metric {
+public class Segment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private  Long id;
-    private String type;
-    private Float value;
-    private String vendor;
+    private   Long id;
+    private   String name;
+    private   String value;
     @OneToOne(cascade = CascadeType.ALL)
     private ExchangeSpecificExtensions exchangeSpecificExtensions;
 }

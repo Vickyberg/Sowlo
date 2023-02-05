@@ -8,14 +8,13 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity
-public class Metric {
+public class UID {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private  Long id;
-    private String type;
-    private Float value;
-    private String vendor;
+    public Long id;
+    public  int agentType;
+
     @OneToOne(cascade = CascadeType.ALL)
-    private ExchangeSpecificExtensions exchangeSpecificExtensions;
+    public  ExchangeSpecificExtensions exchangeSpecificExtensions;
 }
