@@ -26,6 +26,7 @@ public class Audio {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String podId;
     private  int podSequence;
+    @ElementCollection(fetch = FetchType.EAGER)
     private Set<Integer> rqdDurations = new HashSet<>();
     private int sequence;
     private  int slotInPod;
@@ -40,7 +41,7 @@ public class Audio {
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<Integer> deliveries = new HashSet<>();
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<CompanionAd> companionAds = new HashSet<>();
 
     @ElementCollection(fetch = FetchType.EAGER)
@@ -53,7 +54,7 @@ public class Audio {
     private int stitched;
     private int normalizedVolume;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private ExchangeSpecificExtensions extensions;
 
 }

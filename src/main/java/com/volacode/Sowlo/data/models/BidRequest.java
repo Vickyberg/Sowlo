@@ -17,21 +17,21 @@ public class BidRequest {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<Impressions> impressions = new HashSet<>();
 
 
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Site site;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private App app;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Device device;
 
-    @OneToOne
-    private User user;
+    @OneToOne(cascade = CascadeType.ALL)
+    private AppUser appUser;
 
     private int test;
     private int auctionType;
@@ -63,13 +63,13 @@ public class BidRequest {
     @ElementCollection(fetch = FetchType.EAGER)
    private Set<String> blockedListOfApplications = new HashSet<>();
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Source source;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Regulations regulations;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private ExchangeSpecificExtensions exchangeSpecificExtensions;
 
 

@@ -18,18 +18,18 @@ public class Impressions {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<Metric> metrics = new HashSet<>();
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Banner banner;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Video video;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Audio audio;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Native aNative;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private PrivateMarketPlace privateMarketPlace;
     private String displayManager;
     private String displayManagerVer;
@@ -45,7 +45,7 @@ public class Impressions {
     private int receiveRewards;
     private int serverSideAdInsertion;
     private int exp;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private ExchangeSpecificExtensions exchangeSpecificExtensions;
 
 

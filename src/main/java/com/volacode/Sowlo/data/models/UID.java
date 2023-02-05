@@ -15,6 +15,6 @@ public class UID {
     public Long id;
     public  int agentType;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     public  ExchangeSpecificExtensions exchangeSpecificExtensions;
 }

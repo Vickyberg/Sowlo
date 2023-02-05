@@ -16,10 +16,10 @@ public class Source {
     private String transactionId;
     private String paymentId;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private SupplyChain supplyChain;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private ExchangeSpecificExtensions ext;
 
 

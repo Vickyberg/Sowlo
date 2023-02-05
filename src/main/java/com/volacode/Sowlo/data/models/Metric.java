@@ -16,6 +16,6 @@ public class Metric {
     private String type;
     private Float value;
     private String vendor;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private ExchangeSpecificExtensions exchangeSpecificExtensions;
 }

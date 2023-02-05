@@ -54,14 +54,14 @@ public class Video {
     private  Set<Integer> deliveries = new HashSet<>();
     private   int adPosition;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<CompanionAd> companionAds = new HashSet<>();
 
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<Integer> apis = new HashSet<>();
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<Integer> companionTypes = new HashSet<>();
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     public ExchangeSpecificExtensions extensions;
 
 

@@ -1,20 +1,18 @@
 package com.volacode.Sowlo.data.models;
 
 import jakarta.persistence.*;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
-public class User {
+public class AppUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,15 +24,15 @@ public class User {
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<String> keywordArrays = new HashSet<>();
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     public  Geo geo;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<Data> data = new HashSet<>();
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private  Set<EID> eids = new HashSet<>();
     public String consent;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     public ExchangeSpecificExtensions exchangeSpecificExtensions;
 
 }

@@ -20,9 +20,9 @@ public class EID {
     private Long id;
     private   String source;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<UID> uids = new HashSet<>();
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     public  ExchangeSpecificExtensions exchangeSpecificExtensions;
 }

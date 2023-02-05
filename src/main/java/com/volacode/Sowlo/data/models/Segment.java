@@ -15,6 +15,6 @@ public class Segment {
     private   Long id;
     private   String name;
     private   String value;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private ExchangeSpecificExtensions exchangeSpecificExtensions;
 }

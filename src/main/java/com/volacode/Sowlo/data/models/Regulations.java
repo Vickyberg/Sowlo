@@ -18,6 +18,6 @@ public class Regulations {
     private int gdpr;
     private String usPrivacy;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private ExchangeSpecificExtensions ext;
 }

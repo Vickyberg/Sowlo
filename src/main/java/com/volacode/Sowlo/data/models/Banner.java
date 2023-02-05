@@ -17,7 +17,7 @@ public class    Banner {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private  Long id;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<Format> formats = new HashSet<>();
     private  int widthInDeviceIndependentPixels;
     private int heightInDeviceIndependentPixels;
@@ -39,7 +39,7 @@ public class    Banner {
     private Set<Integer> apis = new HashSet<>();
     private int vcm;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private ExchangeSpecificExtensions exchangeSpecificExtensions;
 
 

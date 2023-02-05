@@ -19,6 +19,6 @@ public class Publisher {
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<String> categories = new HashSet<>();
     private String domain;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private ExchangeSpecificExtensions exchangeSpecificExtensions;
 }

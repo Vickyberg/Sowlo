@@ -29,14 +29,14 @@ public class Site {
     private String search;
     private int mobile;
     private int privatePolicy;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Publisher publisher;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Content content;
     private String keywords;
     @ElementCollection(fetch = FetchType.EAGER)
     private  Set<String> keywordArray = new HashSet<>();
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private ExchangeSpecificExtensions exchangeSpecificExtensions;
 
 

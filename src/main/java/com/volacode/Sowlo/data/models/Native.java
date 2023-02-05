@@ -24,6 +24,6 @@ public class Native {
     private Set<Integer> apis = new HashSet<>();
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<Integer> blockedCreativeAttributes = new HashSet<>();
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     public ExchangeSpecificExtensions exchangeSpecificExtensions;
 }

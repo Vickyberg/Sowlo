@@ -17,9 +17,9 @@ public class Data {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<Segment> segments = new HashSet<>();
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     public  ExchangeSpecificExtensions exchangeSpecificExtensions;
 }
