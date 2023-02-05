@@ -2,11 +2,9 @@ package com.volacode.Sowlo.controller;
 
 
 import com.volacode.Sowlo.data.models.BidRequest;
-import com.volacode.Sowlo.data.repositories.BidRequestRepo;
-import com.volacode.Sowlo.data.services.BidRequestService;
+import com.volacode.Sowlo.services.BidRequestService;
 import com.volacode.Sowlo.exceptions.BidRequestException;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
