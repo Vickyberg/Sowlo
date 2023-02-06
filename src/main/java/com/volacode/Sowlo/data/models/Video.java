@@ -55,7 +55,7 @@ public class Video {
     private   int adPosition;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private Set<CompanionAd> companionAds = new HashSet<>();
+    private Set<Banner> companionAds = new HashSet<>();
 
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<Integer> apis = new HashSet<>();

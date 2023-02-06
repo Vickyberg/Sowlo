@@ -11,23 +11,21 @@ import java.util.Set;
 @Data
 @Entity
 @NoArgsConstructor
-public class Deal {
-
+public class UserAgent {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Float bidFloor;
-    private String bidFloorCurrency;
-    private int auctionType;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    private Set<String> wSeat = new HashSet<>();
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<BrandVersion> browsers = new HashSet<>();
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<BrandVersion> platforms = new HashSet<>();
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    private Set<String> advertiserDomains = new HashSet<>();
-
+    private String architecture;
+    private  String bitness;
+    private  String model;
+    private  int source;
     @OneToOne
     private  ExchangeSpecificExtensions exchangeSpecificExtensions;
-
 
 }

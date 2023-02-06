@@ -11,23 +11,16 @@ import java.util.Set;
 @Data
 @Entity
 @NoArgsConstructor
-public class Deal {
+public class Producer {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id@GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Float bidFloor;
-    private String bidFloorCurrency;
-    private int auctionType;
+    private  String name;
+    private  int cattegoryTax;
 
     @ElementCollection(fetch = FetchType.EAGER)
-    private Set<String> wSeat = new HashSet<>();
-
-    @ElementCollection(fetch = FetchType.EAGER)
-    private Set<String> advertiserDomains = new HashSet<>();
-
+    private Set<String > categories = new HashSet<>();
+    private  String domain;
     @OneToOne
     private  ExchangeSpecificExtensions exchangeSpecificExtensions;
-
-
 }

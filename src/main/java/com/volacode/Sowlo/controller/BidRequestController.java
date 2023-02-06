@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api")
-public class BidRequestController {
+public class    BidRequestController {
 
 
     private final BidRequestService bidRequestService;
